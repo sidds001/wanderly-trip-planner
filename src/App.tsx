@@ -11,6 +11,8 @@ import {
 import { ACCOMMODATION_LABEL } from './data/assumptions';
 import { ALL_ACTIVITIES, DESTINATION_LIST, getDestination } from './data/destinations';
 import PHOTOS from './data/photos.json';
+import { CHAT_EXAMPLES, parseChat } from './lib/chat';
+import { MessageCircle, Send } from 'lucide-react';
 
 const photoOf = (id?: string): string | undefined => (id ? (PHOTOS as Record<string, { src: string }>)[id]?.src : undefined);
 
@@ -431,6 +433,57 @@ function ReplaceModal({ day, item, options, onPick, onClose, error }: { day: num
   );
 }
 
+// ---------- plan by chat ----------
+
+type ChatMsg = { from: 'you' | 'bot'; text: string; action?: 'changes' };
+
+function ChatPanel({ open, setOpen, messages, onSend, onShowChanges }: {
+  open: boolean; setOpen: (b: boolean) => void; messages: ChatMsg[]; onSend: (t: string) => void; onShowChanges: () => void;
+}) {
+  const [text, setText] = useState('');
+  const send = (t: string) => { if (!t.trim()) return; onSend(t.trim()); setText(''); };
+  if (!open) {
+    return (
+      <button type="button" onClick={() => setOpen(true)}
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-[linear-gradient(90deg,#E8505B_0%,#D93B6B_100%)] px-5 py-3.5 font-semibold text-white shadow-[0_8px_24px_rgba(217,59,107,0.4)] hover:brightness-95">
+        <Sparkles className="h-5 w-5" />Plan by chat
+      </button>
+    );
+  }
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-50 flex h-[78vh] flex-col overflow-hidden rounded-t-2xl border border-[#DDDDDD] bg-white shadow-2xl sm:inset-x-auto sm:bottom-6 sm:right-6 sm:h-[600px] sm:w-[400px] sm:rounded-2xl">
+      <div className="flex items-center justify-between border-b border-[#EBEBEB] px-4 py-3">
+        <div className="flex items-center gap-2">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E8505B] text-white"><MessageCircle className="h-4 w-4" /></span>
+          <div><div className="text-sm font-semibold">Plan by chat</div><div className="text-xs text-[#717171]">Describe your trip or ask for a change</div></div>
+        </div>
+        <button type="button" onClick={() => setOpen(false)} aria-label="Close chat" className="rounded-full p-2 hover:bg-[#F7F7F7]"><X className="h-4 w-4" /></button>
+      </div>
+      <div className="flex-1 space-y-3 overflow-y-auto p-4">
+        {messages.map((m, i) => (
+          <div key={i} className={`flex ${m.from === 'you' ? 'justify-end' : 'justify-start'}`}>
+            <div className={`max-w-[85%] whitespace-pre-line rounded-2xl px-3.5 py-2.5 text-sm ${m.from === 'you' ? 'rounded-br-md bg-[#222] text-white' : 'rounded-bl-md bg-[#F7F7F7] text-[#222]'}`}>
+              {m.text}
+              {m.action === 'changes' && <button type="button" onClick={onShowChanges} className="mt-2 block text-sm font-semibold underline">See what changed</button>}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="border-t border-[#EBEBEB] p-3">
+        <div className="mb-2 flex gap-2 overflow-x-auto pb-1">
+          {CHAT_EXAMPLES.map((e) => (
+            <button key={e} type="button" onClick={() => send(e)} className="shrink-0 rounded-full border border-[#DDDDDD] px-3 py-1 text-xs hover:border-[#222]">{e}</button>
+          ))}
+        </div>
+        <form onSubmit={(e) => { e.preventDefault(); send(text); }} className="flex items-center gap-2 rounded-full border border-[#B0B0B0] py-1 pl-4 pr-1 focus-within:border-[#222]">
+          <input value={text} onChange={(e) => setText(e.target.value)} placeholder="e.g. 4 friends to Bali, ₹60k, chill" className="min-w-0 flex-1 bg-transparent text-sm outline-none" aria-label="Message" />
+          <button type="submit" aria-label="Send" className="rounded-full bg-[#E8505B] p-2 text-white disabled:opacity-40" disabled={!text.trim()}><Send className="h-4 w-4" /></button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 // ---------- page ----------
 
 export default function App() {
@@ -461,6 +514,31 @@ export default function App() {
     const next = { ...prefs, destination: d, budget: getDestination(d).typicalBudgetFor2 * Math.max(1, prefs.travellers) / 2 };
     setPrefs(next);
     if (plan) { setPlan(generateItinerary(next)); setLastSummary(null); }
+  };
+  const [chatOpen, setChatOpen] = useState(() => typeof location !== 'undefined' && location.hash === '#chat');
+  const [chat, setChat] = useState<ChatMsg[]>([{ from: 'bot', text: 'Hi! Tell me about your trip — where, who, budget, what you love and your pace. Or ask for a change like “cut the budget by 5k” or “skip temples”.' }]);
+  const onChat = (text: string) => {
+    const msgs: ChatMsg[] = [...chat, { from: 'you', text }];
+    const parsed = parseChat(text, prefs);
+    if (parsed.understood.length === 0) {
+      setChat([...msgs, { from: 'bot', text: 'I didn’t catch any trip details there. Try a destination (Goa, Bali, Phuket, Dubai), a budget like ₹40k, how many people, interests (beaches, food, adventure, culture, relaxing) or a pace (chill / packed).' }]);
+      return;
+    }
+    const next: TripPreferences = { ...prefs, ...parsed.patch };
+    const destChange = next.destination !== prefs.destination;
+    if (destChange && parsed.patch.budget === undefined) next.budget = getDestination(next.destination).typicalBudgetFor2 * Math.max(1, next.travellers) / 2;
+    setPrefs(next);
+    const heard = `Got it: ${parsed.understood.join(' · ')}${destChange && parsed.patch.budget === undefined ? ` · typical budget ${inr(next.budget)}` : ''}.`;
+    if (!plan || destChange || parsed.fresh) {
+      const p = generateItinerary(next);
+      setPlan(p); setLastSummary(null);
+      const b = p.breakdown;
+      setChat([...msgs, { from: 'bot', text: `${heard}\n\nHere’s your 3-day ${next.destination} plan: ${p.days.reduce((n, d) => n + d.items.filter((i) => i.activityId).length, 0)} experiences for ${inr(b.total)} — ${b.remaining >= 0 ? `${inr(b.remaining)} left in your budget` : `${inr(-b.remaining)} over your budget`}.${p.warnings.length ? '\n\n⚠️ ' + p.warnings[0].message : ''}` }]);
+    } else {
+      const r = replanItinerary(plan, next);
+      setPlan(r.plan); setLastSummary(r.summary);
+      setChat([...msgs, { from: 'bot', text: `${heard}\n\n${r.summary.narrative}${r.plan.warnings.length ? '\n\n⚠️ ' + r.plan.warnings[0].message : ''}`, action: 'changes' }]);
+    }
   };
   const replan = () => {
     if (!plan) return;
@@ -545,6 +623,7 @@ export default function App() {
       </main>
       {summary && <ChangeModal s={summary} onClose={() => setSummary(null)} />}
       {replacing && plan && <ReplaceModal day={replacing.day} item={replacing.item} options={options} onPick={pick} onClose={() => setReplacing(null)} error={replaceErr} />}
+      <ChatPanel open={chatOpen} setOpen={setChatOpen} messages={chat} onSend={onChat} onShowChanges={() => lastSummary && setSummary(lastSummary)} />
       {toast && <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-[#222] px-5 py-3 text-sm font-medium text-white shadow-xl">{toast}</div>}
     </div>
   );

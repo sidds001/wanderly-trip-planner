@@ -34,6 +34,7 @@ Plan **3 days in Goa, Bali, Phuket or Dubai** around a fixed budget. You get a t
 | **"What changed" explanation** | A before/after price table and a plain-English summary, worked out from the real difference between the two plans (not canned text). |
 | **Replace any stop** | Swap one activity for an alternative. The day re-times itself, the cost updates, and your pick is locked in for later replans. |
 | **Honest warnings** | If a budget is too small for any workable trip, you are told the minimum it needs. It never goes over budget silently. |
+| **Plan by chat** | Describe the trip in plain words ("4 friends to Bali, ₹60k, chill pace") or ask for a change ("cut the budget by 5k", "skip temples"). The settings fill in and the trip is built or replanned. |
 | **Four destinations** | Goa, Bali, Phuket and Dubai, each with its own prices, transport options and 18–19 real places. |
 
 ---
@@ -101,12 +102,33 @@ Raising the budget brings back upgrades, but never above the travel style you pi
 
 If no workable trip fits, a red warning gives the cheapest plan's cost and suggests what to change: raise the budget, cut travellers, or choose cheaper transport. The cheapest workable plan is still shown below it.
 
-### 8. Demo shortcuts
+### 8. Plan by chat
+
+Click **Plan by chat** (bottom right) and type naturally, or tap an example. It understands:
+
+| You can say | What it sets |
+|---|---|
+| "Bali", "Phuket", "Dubai", "Goa" | Destination (a new destination builds a fresh plan) |
+| "₹60k", "1.5 lakh", "under 20000" | Budget |
+| "cut the budget by 5k", "increase budget by 10k", "cheaper" | Budget relative to now |
+| "4 friends", "couple", "solo", "family of 5", "add one more person" | Guests |
+| "beaches and food", "more adventure", "skip temples", "no culture" | Interests (set, add or remove) |
+| "chill", "relaxed", "packed", "see everything" | Pace |
+| "luxury", "backpacking", "mid-range" | Travel style |
+| "by scooter", "taxi", "metro", "public transport" | Getting around |
+| "from 20 Dec", "starting March 5" | Start date |
+
+The reply says what it understood and the result: the new total, or the full "What changed" summary with a **See what changed** link. If nothing is recognised, it tells you what you can say.
+
+> The chat uses keyword rules, not an AI model, so it works offline with no API key. The parser (`src/lib/chat.ts`) takes text in and returns trip settings, which is where a language model can be dropped in later. The planner still produces every plan and price.
+
+### 9. Demo shortcuts
 
 | URL | Opens |
 |---|---|
 | `/#demo` | A ready-made ₹25,000 Goa trip for 2 (Balanced, Moderate, Cab) |
 | `/#replan` | The same trip replanned to ₹15,000, with **What changed** open |
+| `/#chat` | Opens the Plan by chat panel |
 
 **Suggested 5-minute demo:** generate at ₹25,000 → tap ₹15k → **Replan trip** → read the summary → close it, then on Day 3 click **Replace** and pick another stop → switch to **Bali** to show a new destination.
 
@@ -216,6 +238,8 @@ src/
     diff.ts            compares two plans → "What changed" summary
     config.ts          every product rule in one place
     types.ts           domain types
+  lib/
+    chat.ts            Plan by chat: plain-English request → trip settings
   data/
     destinations.ts    destination profiles: base, day areas, rates, transport, typical budget
     activities.ts      Goa activities
@@ -235,14 +259,15 @@ architecture.md        technical design
 
 ## Tests
 
-28 tests (`npm test`) check:
+36 tests (`npm test`) check:
 
 - no overlapping stops, opening hours respected, and lunch and dinner on every day;
 - the cost breakdown matches an independent hand calculation;
 - replans fit the new budget and keep activities that still fit;
 - your own picks survive replans;
 - budgets too small for any trip get a warning;
-- all four destinations generate, replan and offer replacements.
+- all four destinations generate, replan and offer replacements;
+- the chat parser reads destinations, budgets (k, lakh, relative cuts), guests, interests, pace, style, transport and dates.
 
 ---
 
@@ -258,7 +283,7 @@ architecture.md        technical design
 - Live hotel and activity prices.
 - More destinations and trip lengths.
 - Saved and shareable trips.
-- Plain-English requests ("make day 2 more relaxed") on top of the same engine.
+- Swap the chat's keyword rules for a language model (behind a small server, so no API key reaches the browser) to handle any phrasing and per-day edits like "make day 2 lighter".
 
 ---
 
