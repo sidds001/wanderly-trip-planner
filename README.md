@@ -264,4 +264,4 @@ architecture.md        technical design
 
 ## Photo credits
 
-Place photos in `public/photos/` are from Wikimedia Commons under their own licences (CC BY, CC BY-SA, CC0 and public domain). The source, author and licence of every photo are listed in [CREDITS.md](CREDITS.md). Activities without a suitable photo show an illustrated tile instead.
+Place photos in `public/photos/` are from Wikimedia Commons under their own licences (CC BY, CC BY-SA, CC0 and public domain). The source, author and licence of every photo are listed in [CREDITS.md](CREDITS.md).

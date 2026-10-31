@@ -418,5 +418,75 @@
   "license": "CC BY-SA 4.0",
   "author": "iMahesh",
   "page": "https://commons.wikimedia.org/wiki/File:A_car_on_Dubai_Dune_bashing.jpg"
+ },
+ "fontainhas": {
+  "src": "photos/fontainhas.jpg",
+  "title": "File:Streets of Fontainhas, Panaji (03).jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "iMahesh",
+  "page": "https://commons.wikimedia.org/wiki/File:Streets_of_Fontainhas,_Panaji_(03).jpg"
+ },
+ "premium-water-sports": {
+  "src": "photos/premium-water-sports.jpg",
+  "title": "File:Parasailing on the Calangute beach, Goa.jpg",
+  "license": "CC BY 2.0",
+  "author": "Praveen from Bangalore, India",
+  "page": "https://commons.wikimedia.org/wiki/File:Parasailing_on_the_Calangute_beach,_Goa.jpg"
+ },
+ "dona-paula-sunset": {
+  "src": "photos/dona-paula-sunset.jpg",
+  "title": "File:Dona-Paula-Bay,Goa.JPG",
+  "license": "CC BY-SA 3.0",
+  "author": "Aruna at ml.wikipedia",
+  "page": "https://commons.wikimedia.org/wiki/File:Dona-Paula-Bay,Goa.JPG"
+ },
+ "assagao-cafe": {
+  "src": "photos/assagao-cafe.jpg",
+  "title": "File:Cafe in Calangute, Goa.jpg",
+  "license": "CC BY-SA 3.0",
+  "author": "User:psubhashish",
+  "page": "https://commons.wikimedia.org/wiki/File:Cafe_in_Calangute,_Goa.jpg"
+ },
+ "canggu-surf": {
+  "src": "photos/canggu-surf.jpg",
+  "title": "File:Young surfers, Bali, Indonesia; January 2020.jpg",
+  "license": "CC BY 2.0",
+  "author": "Tiket2",
+  "page": "https://commons.wikimedia.org/wiki/File:Young_surfers,_Bali,_Indonesia;_January_2020.jpg"
+ },
+ "ubud-palace": {
+  "src": "photos/ubud-palace.jpg",
+  "title": "File:Ubud Palace (2022).jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Chainwit.",
+  "page": "https://commons.wikimedia.org/wiki/File:Ubud_Palace_(2022).jpg"
+ },
+ "balinese-massage": {
+  "src": "photos/balinese-massage.jpg",
+  "title": "File:YHI Spa treatment room at Paradisus by Meliá Bali.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Paradisus Bali",
+  "page": "https://commons.wikimedia.org/wiki/File:YHI_Spa_treatment_room_at_Paradisus_by_Meli%C3%A1_Bali.jpg"
+ },
+ "elephant-sanctuary": {
+  "src": "photos/elephant-sanctuary.jpg",
+  "title": "File:Elephant d'Asie (Elephant nature park, Thaïlande).jpg",
+  "license": "CC BY 4.0",
+  "author": "Chirstelle EL JAMALI",
+  "page": "https://commons.wikimedia.org/wiki/File:Elephant_d%27Asie_(Elephant_nature_park,_Tha%C3%AFlande).jpg"
+ },
+ "rawai-longtail-snorkel": {
+  "src": "photos/rawai-longtail-snorkel.jpg",
+  "title": "File:Long tails (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Jakob Owens jakobowens1",
+  "page": "https://commons.wikimedia.org/wiki/File:Long_tails_(Unsplash).jpg"
+ },
+ "ayurvedic-spa": {
+  "src": "photos/ayurvedic-spa.jpg",
+  "title": "File:YHI Spa treatment room at Paradisus by Meliá Bali.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Paradisus Bali",
+  "page": "https://commons.wikimedia.org/wiki/File:YHI_Spa_treatment_room_at_Paradisus_by_Meli%C3%A1_Bali.jpg"
  }
 }

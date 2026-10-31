@@ -1,6 +1,6 @@
 # Photo credits
 
-Photos in `public/photos/` are from Wikimedia Commons, used under the licences below. Each was resized to a thumbnail; nothing else was changed.
+Photos in `public/photos/` are from Wikimedia Commons, used under the licences below. Each was resized to a thumbnail; nothing else was changed. Some generic photos (spa, café, water sports) stand in for the exact place.
 
 | Photo | Source file | Author | Licence |
 |---|---|---|---|
@@ -8,9 +8,12 @@ Photos in `public/photos/` are from Wikimedia Commons, used under the licences b
 | `al-fahidi.jpg` | [Al Fahidi-Fort.jpg](https://commons.wikimedia.org/wiki/File:Al_Fahidi-Fort.jpg) | Noor Ali | Public domain |
 | `anjuna-beach.jpg` | [Anjuna Beach, Goa, India, Legendary Curlies beach shack.jpg](https://commons.wikimedia.org/wiki/File:Anjuna_Beach,_Goa,_India,_Legendary_Curlies_beach_shack.jpg) | Vyacheslav Argenberg | CC BY 4.0 |
 | `aquaventure.jpg` | [Atlantis Aquaventure Station 2.jpg](https://commons.wikimedia.org/wiki/File:Atlantis_Aquaventure_Station_2.jpg) | EditQ | CC0 |
+| `assagao-cafe.jpg` | [Cafe in Calangute, Goa.jpg](https://commons.wikimedia.org/wiki/File:Cafe_in_Calangute,_Goa.jpg) | User:psubhashish | CC BY-SA 3.0 |
+| `ayurvedic-spa.jpg` | [YHI Spa treatment room at Paradisus by Meliá Bali.jpg](https://commons.wikimedia.org/wiki/File:YHI_Spa_treatment_room_at_Paradisus_by_Meli%C3%A1_Bali.jpg) | Paradisus Bali | CC BY-SA 4.0 |
 | `baga-beach.jpg` | [Baga Beach, Goa.jpg](https://commons.wikimedia.org/wiki/File:Baga_Beach,_Goa.jpg) | Slyronit | CC BY-SA 4.0 |
 | `bali-swing.jpg` | [Terrace River Pool Swing Bali.jpg](https://commons.wikimedia.org/wiki/File:Terrace_River_Pool_Swing_Bali.jpg) | Shalma Dinda | CC BY-SA 4.0 |
 | `balinese-cooking.jpg` | [Bulung boni.jpg](https://commons.wikimedia.org/wiki/File:Bulung_boni.jpg) | Okkisafire | CC BY-SA 4.0 |
+| `balinese-massage.jpg` | [YHI Spa treatment room at Paradisus by Meliá Bali.jpg](https://commons.wikimedia.org/wiki/File:YHI_Spa_treatment_room_at_Paradisus_by_Meli%C3%A1_Bali.jpg) | Paradisus Bali | CC BY-SA 4.0 |
 | `beach-kayaking.jpg` | [Baga Beach, Goa.jpg](https://commons.wikimedia.org/wiki/File:Baga_Beach,_Goa.jpg) | Slyronit | CC BY-SA 4.0 |
 | `big-buddha.jpg` | [The Big Buddha, Phuket.jpg](https://commons.wikimedia.org/wiki/File:The_Big_Buddha,_Phuket.jpg) | Subhrajyoti07 | CC BY-SA 4.0 |
 | `bom-jesus.jpg` | [Side Elevation of Basilica of Bom Jesus.jpg](https://commons.wikimedia.org/wiki/File:Side_Elevation_of_Basilica_of_Bom_Jesus.jpg) | iMahesh | CC BY-SA 4.0 |
@@ -20,12 +23,16 @@ Photos in `public/photos/` are from Wikimedia Commons, used under the licences b
 | `campuhan-ridge.jpg` | [Campuhan ridge walk Ubud Bali 20120827b.jpg](https://commons.wikimedia.org/wiki/File:Campuhan_ridge_walk_Ubud_Bali_20120827b.jpg) | Tigerente | CC BY-SA 4.0 |
 | `canggu-cafes.jpg` | [Sunset at Canggu beach.jpg](https://commons.wikimedia.org/wiki/File:Sunset_at_Canggu_beach.jpg) | User:(WT-shared) Burmesedays | CC BY-SA 4.0 |
 | `canggu-group-surf.jpg` | [Sunset in Batu Bolong, Tanah Lot, Bali.jpg](https://commons.wikimedia.org/wiki/File:Sunset_in_Batu_Bolong,_Tanah_Lot,_Bali.jpg) | Made agus devayana | CC BY-SA 4.0 |
+| `canggu-surf.jpg` | [Young surfers, Bali, Indonesia; January 2020.jpg](https://commons.wikimedia.org/wiki/File:Young_surfers,_Bali,_Indonesia;_January_2020.jpg) | Tiket2 | CC BY 2.0 |
 | `chapora-fort.jpg` | [Walls of Fort Chapora 2 26012016.jpg](https://commons.wikimedia.org/wiki/File:Walls_of_Fort_Chapora_2_26012016.jpg) | Nikhilb239 | CC BY 3.0 |
 | `coral-island-speedboat.jpg` | [Phuket Yacht - Maiton and Coral island.jpg](https://commons.wikimedia.org/wiki/File:Phuket_Yacht_-_Maiton_and_Coral_island.jpg) | Phuket@photographer.net | CC BY 2.0 |
 | `desert-safari.jpg` | [Dubai Desert Safari Liwa.jpg](https://commons.wikimedia.org/wiki/File:Dubai_Desert_Safari_Liwa.jpg) | Grocerbix | CC BY-SA 4.0 |
+| `dona-paula-sunset.jpg` | [Dona-Paula-Bay,Goa.JPG](https://commons.wikimedia.org/wiki/File:Dona-Paula-Bay,Goa.JPG) | Aruna at ml.wikipedia | CC BY-SA 3.0 |
 | `dubai-fountain.jpg` | [Dubai Fountain 7.JPG](https://commons.wikimedia.org/wiki/File:Dubai_Fountain_7.JPG) | Nealt | CC BY-SA 3.0 |
 | `dubai-frame.jpg` | [DONIS Dubai Frame Nighttime.jpg](https://commons.wikimedia.org/wiki/File:DONIS_Dubai_Frame_Nighttime.jpg) | Sachimo | CC BY-SA 4.0 |
 | `dubai-mall.jpg` | [The Dubai Mall Aquarium and underwater Zoo (Ank Kumar, Infosys) 09.jpg](https://commons.wikimedia.org/wiki/File:The_Dubai_Mall_Aquarium_and_underwater_Zoo_(Ank_Kumar,_Infosys)_09.jpg) | Ank Kumar | CC BY-SA 4.0 |
+| `elephant-sanctuary.jpg` | [Elephant d'Asie (Elephant nature park, Thaïlande).jpg](https://commons.wikimedia.org/wiki/File:Elephant_d%27Asie_(Elephant_nature_park,_Tha%C3%AFlande).jpg) | Chirstelle EL JAMALI | CC BY 4.0 |
+| `fontainhas.jpg` | [Streets of Fontainhas, Panaji (03).jpg](https://commons.wikimedia.org/wiki/File:Streets_of_Fontainhas,_Panaji_(03).jpg) | iMahesh | CC BY-SA 4.0 |
 | `fort-aguada.jpg` | [Aguada Fort Top View, North Goa.jpg](https://commons.wikimedia.org/wiki/File:Aguada_Fort_Top_View,_North_Goa.jpg) | Rupeshsarkar | CC BY-SA 4.0 |
 | `goan-food-trail.jpg` | [Goan typical meal -- fish, curry and rice.jpg](https://commons.wikimedia.org/wiki/File:Goan_typical_meal_--_fish,_curry_and_rice.jpg) | Fredericknoronha | CC BY-SA 4.0 |
 | `jbr-beach.jpg` | [Dubai Jumeirah Beach.JPG](https://commons.wikimedia.org/wiki/File:Dubai_Jumeirah_Beach.JPG) | pe-sa | CC BY 3.0 |
@@ -49,8 +56,10 @@ Photos in `public/photos/` are from Wikimedia Commons, used under the licences b
 | `panaji-market.jpg` | [Panaji Muncipal Market.jpg](https://commons.wikimedia.org/wiki/File:Panaji_Muncipal_Market.jpg) | Noobshots | CC BY-SA 4.0 |
 | `patong-beach.jpg` | [Patong Beach Phuket November 2012.jpg](https://commons.wikimedia.org/wiki/File:Patong_Beach_Phuket_November_2012.jpg) | Arnaud-Victor Monteux | CC BY-SA 4.0 |
 | `patong-parasailing.jpg` | [Parasailing around Patong Beach Bay at Sunset.jpg](https://commons.wikimedia.org/wiki/File:Parasailing_around_Patong_Beach_Bay_at_Sunset.jpg) | scott paul riefler | CC BY-SA 4.0 |
+| `premium-water-sports.jpg` | [Parasailing on the Calangute beach, Goa.jpg](https://commons.wikimedia.org/wiki/File:Parasailing_on_the_Calangute_beach,_Goa.jpg) | Praveen from Bangalore, India | CC BY 2.0 |
 | `promthep-cape.jpg` | [Beautiful Sunset on Promthep Cape, Phuket island, Thailand.jpg](https://commons.wikimedia.org/wiki/File:Beautiful_Sunset_on_Promthep_Cape,_Phuket_island,_Thailand.jpg) | Phuket@photographer.net | CC BY 2.0 |
 | `quad-bike.jpg` | [A car on Dubai Dune bashing.jpg](https://commons.wikimedia.org/wiki/File:A_car_on_Dubai_Dune_bashing.jpg) | iMahesh | CC BY-SA 4.0 |
+| `rawai-longtail-snorkel.jpg` | [Long tails (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Long_tails_(Unsplash).jpg) | Jakob Owens jakobowens1 | CC0 |
 | `rawai-seafood.jpg` | [Phuket - Rawai Beach 11.jpg](https://commons.wikimedia.org/wiki/File:Phuket_-_Rawai_Beach_11.jpg) | ADwarf | Public domain |
 | `seminyak-beach.jpg` | [Jump! (Petitengget Beach, Seminyak, Bali).jpg](https://commons.wikimedia.org/wiki/File:Jump!_(Petitengget_Beach,_Seminyak,_Bali).jpg) | Bonita Suraputra | CC BY 2.0 |
 | `seminyak-beach-club.jpg` | [Seminyak Beach Resort Large.JPG](https://commons.wikimedia.org/wiki/File:Seminyak_Beach_Resort_Large.JPG) | User: (WT-shared) Jpatokal at  wts wikivoyage | CC BY-SA 4.0 |
@@ -60,6 +69,7 @@ Photos in `public/photos/` are from Wikimedia Commons, used under the licences b
 | `thai-cooking.jpg` | [Pad Thai in Thai Cooking School in Sukhothai.jpg](https://commons.wikimedia.org/wiki/File:Pad_Thai_in_Thai_Cooking_School_in_Sukhothai.jpg) | Elmschrat | CC BY-SA 4.0 |
 | `thai-massage.jpg` | [Classical Thai Massage at Tara Angkor Hotel (5918685202).jpg](https://commons.wikimedia.org/wiki/File:Classical_Thai_Massage_at_Tara_Angkor_Hotel_(5918685202).jpg) | Tara Angkor Hotel | CC BY 2.0 |
 | `ubud-market.jpg` | [Ubud market (16870234508).jpg](https://commons.wikimedia.org/wiki/File:Ubud_market_(16870234508).jpg) | Jorge Láscar from Melbourne, Australia | CC BY 2.0 |
+| `ubud-palace.jpg` | [Ubud Palace (2022).jpg](https://commons.wikimedia.org/wiki/File:Ubud_Palace_(2022).jpg) | Chainwit. | CC BY-SA 4.0 |
 | `uluwatu-temple.jpg` | [Luhur Uluwatu Temple, Bali, 20220826 0953 1016.jpg](https://commons.wikimedia.org/wiki/File:Luhur_Uluwatu_Temple,_Bali,_20220826_0953_1016.jpg) | Jakub Hałun | CC BY-SA 4.0 |
 | `vagator-beach.jpg` | [Vagator Beach 25012016.jpg](https://commons.wikimedia.org/wiki/File:Vagator_Beach_25012016.jpg) | Nikhilb239 | CC BY 3.0 |
 | `wat-chalong.jpg` | [Phuket Thailand Wat-Chalong-01.jpg](https://commons.wikimedia.org/wiki/File:Phuket_Thailand_Wat-Chalong-01.jpg) | CEphoto, Uwe Aranas | CC BY-SA 4.0 |
