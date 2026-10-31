@@ -24,4 +24,4 @@ All prices, durations and travel times are **illustrative estimates, not live ra
 
 ## Photo credits
 
-Place photos in `public/photos/` come from Wikimedia Commons under their own licences (mostly CC BY / CC BY-SA). The file, author and licence for each photo are listed in `src/data/photos.json`.
+Place photos in `public/photos/` come from Wikimedia Commons under their own licences (mostly CC BY / CC BY-SA). The source, author and licence of each photo are listed in [CREDITS.md](CREDITS.md).
